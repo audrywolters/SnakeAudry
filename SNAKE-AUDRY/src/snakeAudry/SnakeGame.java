@@ -1,3 +1,8 @@
+/*
+ * Basic functionality written by Clara James
+ * Edited and enhanced by Audry Wolters
+ */
+
 package snakeAudry;
 
 import java.util.Timer;

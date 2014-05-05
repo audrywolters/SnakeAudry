@@ -1,3 +1,9 @@
+/*
+ * Basic functionality written by Clara James
+ * Edited and enhanced by Audry Wolters
+ */
+
+
 package snakeAudry;
 
 import java.awt.*;
@@ -31,7 +37,7 @@ public class DrawSnakeGamePanel extends JPanel {
 
 	}
 
-	//a library class that makes sure window is that size? //TODO clarify Dimension
+	//a library class that makes sure window is that size
 	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension(SnakeGame.xPixelMaxDimension, SnakeGame.yPixelMaxDimension);
@@ -88,7 +94,6 @@ public class DrawSnakeGamePanel extends JPanel {
 
 	//game win screen
 	private void displayGameWon(Graphics g) {
-		// TODO Replace this with something really special!
 		g.clearRect(100,100,350,350);
 		g.drawString("YOU WON SNAKE!!!", 150, 150);
 	}
@@ -198,7 +203,7 @@ public class DrawSnakeGamePanel extends JPanel {
 
 	private void displaySnake(Graphics g) {
 
-		//Rainbow Snake code from Clara James
+		//Rainbow Snake code inspired by Clara James
 		//colors of the rainbow
 		Color red = new Color(211, 106, 106);
 		Color red2 = new Color(214, 125, 105);
@@ -215,11 +220,16 @@ public class DrawSnakeGamePanel extends JPanel {
 		Color vio = new Color(153, 120, 150);
 		Color vio2 = new Color(175, 117, 134);
 
-		Color[] rainbow = { red, red2, org, org2, yel, yel2, grn, grn2, blu, blu2, ind, ind2, vio, vio2 };		
+		//array of colors
+		Color[] rainbow = { red, red2, org, org2, yel, yel2, grn, grn2, blu, blu2, ind, ind2, vio, vio2 };	
+		//snake segment coords
 		LinkedList<Point> coords = snake.segmentsToDraw();	
+		//length of rainbow colors
 		int totalColors = rainbow.length;
+		//start at 0 color (red)
 		int startColor = 0;
 
+		//for each coord, draw in specific color
 		for (Point p : coords) {
 			g.setColor(rainbow[startColor]);
 			startColor = (startColor + 1) % totalColors;

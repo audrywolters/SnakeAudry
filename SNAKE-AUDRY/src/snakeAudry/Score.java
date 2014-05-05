@@ -1,3 +1,10 @@
+/*
+ * Basic functionality written by Clara James
+ * Edited and enhanced by Audry Wolters
+ */
+
+
+
 package snakeAudry;
 
 /** Keeps track of, and display the user's score
